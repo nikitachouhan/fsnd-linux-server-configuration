@@ -52,7 +52,14 @@ Reading state information... Done
 Calculating upgrade... Done
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 ```
+upgradable list shows nothing
 
+```sh
+grader@ip-172-26-15-157:~$ sudo apt list --upgradable
+[sudo] password for grader:
+Listing... Done
+
+```
 ### Create User grader and provide sudo access to it.
 ```sh
 sudo adduser grader
