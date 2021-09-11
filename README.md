@@ -5,6 +5,8 @@ IP ADDRESS: 3.6.92.91
 
 HTTP ADDRESS: http://3.6.92.91/
 
+SSH PORT: 2200
+
 ## Table of Contents
 
 - [Tasks](#tasks)
