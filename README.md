@@ -22,10 +22,36 @@ sudo apt-get upgrade
 sudo apt-get dist-upgrade
 sudo reboot
 ```
+
+#### Reference - 
+https://serverfault.com/questions/265410/ubuntu-server-message-says-packages-can-be-updated-but-apt-get-does-not-update
+
+https://askubuntu.com/questions/94102/what-is-the-difference-between-apt-get-update-and-upgrade
+
+
 #### Status - 
 After Performing all the commands the Update still does not work for me. it shows 17 packages can be updated.
-2 updates are security updates.
-
+2 updates are security updates. However in response it shows below logs.
+```sh
+eading package lists... Done
+Building dependency tree
+Reading state information... Done
+Calculating upgrade... Done
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+grader@ip-172-26-15-157:~$ sudo apt-get update && sudo apt-get dist-upgrade
+Hit:1 http://ppa.launchpad.net/deadsnakes/ppa/ubuntu xenial InRelease
+Hit:2 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu xenial InRelease
+Get:3 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
+Get:4 http://security.ubuntu.com/ubuntu xenial-security InRelease [109 kB]
+Get:5 http://ap-south-1.ec2.archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
+Fetched 325 kB in 1s (243 kB/s)
+Reading package lists... Done
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+Calculating upgrade... Done
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+```
 
 ### Create User grader and provide sudo access to it.
 ```sh
