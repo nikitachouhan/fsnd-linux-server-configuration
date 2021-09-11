@@ -19,8 +19,14 @@ SSH PORT: 2200
 ```sh
 sudo apt-get update
 sudo apt-get upgrade
+sudo apt-get dist-upgrade
+sudo reboot
 ```
-    
+#### Status - 
+After Performing all the commands the Update still does not work for me. it shows 17 packages can be updated.
+2 updates are security updates.
+
+
 ### Create User grader and provide sudo access to it.
 ```sh
 sudo adduser grader
