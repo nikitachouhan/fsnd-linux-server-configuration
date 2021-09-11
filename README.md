@@ -154,10 +154,11 @@ sudo touch /var/www/catalog/wsgi.py
 
 Configure above file with below script
 ```python
+# Provide application path
 import sys
 sys.path.insert(0, "/var/www/catalog")
 
-# Import Flask instance from main application file
+# Import Flask instance
 from application import app as application
 
 if __name__ == '__main__':
