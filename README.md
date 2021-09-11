@@ -11,7 +11,7 @@ SSH PORT: 2200
 
 - [Tasks](#tasks)
 - [Open Issues](#open-issues)
-- [Refernces](#references)
+- [References](#references)
 
 ## Tasks
 
@@ -209,10 +209,15 @@ I have similar issue mentioned in this thread - https://knowledge.udacity.com/qu
 The issue still persists with my application.
 
 
-## Refernces
+## References
 https://titanwolf.org/Network/Articles/Article?AID=ca581545-474a-4aa0-83dc-c57c6c344d32#gsc.tab=0
+
 https://newbedev.com/change-mod-wsgi-from-python3-5-to-3-6
+
 https://nip.io/
+
 https://stackoverflow.com/questions/20627327/invalid-command-wsgiscriptalias-perhaps-misspelled-or-defined-by-a-module-not
+
 https://www.digitalocean.com/community/tutorials/how-to-secure-postgresql-on-an-ubuntu-vps
+
 https://help.ubuntu.com/community/UbuntuTime#Using_the_Command_Line_.28terminal.29
