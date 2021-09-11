@@ -151,8 +151,27 @@ Create a wsgi.py file
 ```sh
 sudo touch /var/www/catalog/wsgi.py
 ```
+
 Configure above file with below script
 ```python
+import sys
+sys.path.insert(0, "/var/www/catalog")
+
+# Import Flask instance from main application file
+from application import app as application
+
+if __name__ == '__main__':
+    app.config['SESSION_TYPE'] = 'filesystem'
+    app.run(host='0.0.0.0', port=8000)
+```
+
+Create a conf file
+```sh
+sudo touch /etc/apache2/sites-available/catalog.conf
+```
+
+Configure above file with below script
+```sh
 <VirtualHost *:80>
         ServerName 3.6.92.91
         ServerAdmin nikitachouhan@gmail.com
@@ -169,6 +188,7 @@ Configure above file with below script
         CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 ```
+
 Enable virtual host
 ```sh
 sudo a2ensite catalog
