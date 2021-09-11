@@ -208,6 +208,8 @@ While clicking on Google-signin button i get this error - `Error 400: invalid_re
 I have similar issue mentioned in this thread - https://knowledge.udacity.com/questions/28323 .It is mentioned that Google OAuth working is not required for submission.
 The issue still persists with my application.
 
+### Duplicated Categories
+Categories are duplicated on home page. This is due to multiple runs of populate_db_data.py. Since category name is not a unique field the data was duplicated with new id. 
 
 ## References
 https://titanwolf.org/Network/Articles/Article?AID=ca581545-474a-4aa0-83dc-c57c6c344d32#gsc.tab=0
