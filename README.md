@@ -28,6 +28,7 @@ sudo touch /etc/sudoers.d/grader
 sudo vim /etc/sudoers.d/grader
 ```
 In sudoers file add - `grader ALL=(ALL:ALL) ALL`
+Password for grader to access sudo commands - `grader`
 
 ### SSH key-pair for grader user.
 Generate ssh key on local machine - `ssh-keygen -f ~/.ssh/<key-name>` (leave passphrase empty)
