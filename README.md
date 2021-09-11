@@ -155,7 +155,7 @@ Configure above file with below script
         ServerName 3.6.92.91
         ServerAdmin nikitachouhan@gmail.com
         ServerAlias 3.6.92.92.nip.io
-        WSGIDaemonProcess application  threads=3
+        WSGIDaemonProcess application
         WSGIScriptAlias / /var/www/catalog/wsgi.py
         <Directory /var/www/catalog/>
                 WSGIProcessGroup application
