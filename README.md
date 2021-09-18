@@ -1,9 +1,9 @@
 # Linux-Server-Configuration
 You will take a baseline installation of a Linux server and prepare it to host your web applications. You will secure your server from a number of attack vectors, install and configure a database server, and deploy one of your existing web applications onto it.
 
-IP ADDRESS: 3.6.92.91
+IP ADDRESS: 13-235-19-223
 
-HTTP ADDRESS: http://3.6.92.91/
+HTTP ADDRESS: http://ec2-13-235-19-223.ap-south-1.compute.amazonaws.com/
 
 SSH PORT: 2200
 
@@ -237,30 +237,45 @@ Enable virtual host
 sudo a2ensite catalog
 sudo service apache2 restart
 ```
-At this point on http://3.6.92.91/ I am able to access my web application.
+At this point on http://13-235-19-223/ I am able to access my web application.
 
 ## Open Issues
 
 ### Issue with Google Sign-in
-I changed "redirect_uris" and  "javascript_origins" to `http://3.6.92.91.nip.io,http://3.6.92.91` in client_secrets.json.
+I changed "redirect_uris" and  "javascript_origins" to `http://13-235-19-223.nip.io,http://13-235-19-223` in client_secrets.json.
 
 While clicking on Google-signin button i get this error - `Error 400: invalid_request Permission denied to generate login hint for target domain.`
 
 I have similar issue mentioned in this thread - https://knowledge.udacity.com/questions/28323 .It is mentioned that Google OAuth working is not required for submission.
 The issue still persists with my application.
 
+#### Solution
+- Open https://www.hcidata.info/host2ip.cgi and receive the Host name for your public IP-address.
+- In `/etc/apache2/sites-available/catalog.conf` add below config 
+  `ServerAlias ec2-13-235-19-223.ap-south-1.compute.amazonaws.com`
+- Enable the virtual host
+  ```sh
+  $ sudo a2ensite catalog
+  $ sudo service apache2 restart
+  ```
+- In Google Developer Console: https://console.developers.google.com/project
+  1. Navigate to Credentials > Edit json
+  2. Add your host name and public IP-address to your Authorized JavaScript origins and your host name to Authorized redirect URIs
+     e.g. http://ec2-13-235-19-223.ap-south-1.compute.amazonaws.com/
+
 ### Duplicated Categories
 Categories are duplicated on home page. This is due to multiple runs of populate_db_data.py. Since category name is not a unique field the data was duplicated with new id. 
 
 ## References
-https://titanwolf.org/Network/Articles/Article?AID=ca581545-474a-4aa0-83dc-c57c6c344d32#gsc.tab=0
+[Mod Wsgi Installation command](https://titanwolf.org/Network/Articles/Article?AID=ca581545-474a-4aa0-83dc-c57c6c344d32#gsc.tab=0)
 
-https://newbedev.com/change-mod-wsgi-from-python3-5-to-3-6
+[Mod Wsgi from python 3.5 to 3.6](https://newbedev.com/change-mod-wsgi-from-python3-5-to-3-6)
 
-https://nip.io/
+[Issues with mod-wsgi](https://stackoverflow.com/questions/20627327/invalid-command-wsgiscriptalias-perhaps-misspelled-or-defined-by-a-module-not)
 
-https://stackoverflow.com/questions/20627327/invalid-command-wsgiscriptalias-perhaps-misspelled-or-defined-by-a-module-not
+[DNS for any IP Address](https://nip.io/)
 
-https://www.digitalocean.com/community/tutorials/how-to-secure-postgresql-on-an-ubuntu-vps
+[PostgreSql configurations on ubuntu](https://www.digitalocean.com/community/tutorials/how-to-secure-postgresql-on-an-ubuntu-vps)
 
-https://help.ubuntu.com/community/UbuntuTime#Using_the_Command_Line_.28terminal.29
+[Timezone configuration on ubuntu](https://help.ubuntu.com/community/UbuntuTime#Using_the_Command_Line_.28terminal.29)
+
