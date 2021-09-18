@@ -250,7 +250,7 @@ I have similar issue mentioned in this thread - https://knowledge.udacity.com/qu
 The issue still persists with my application.
 
 #### Solution
-- Open https://www.hcidata.info/host2ip.cgi and receive the Host name for your public IP-address.
+- Get a Host name for the public IP address from [host2ip](https://www.hcidata.info/host2ip.cgi).
 - In `/etc/apache2/sites-available/catalog.conf` add below config 
   `ServerAlias ec2-13-235-19-223.ap-south-1.compute.amazonaws.com`
 - Enable the virtual host
@@ -260,11 +260,14 @@ The issue still persists with my application.
   ```
 - In Google Developer Console: https://console.developers.google.com/project
   1. Navigate to Credentials > Edit json
-  2. Add your host name and public IP-address to your Authorized JavaScript origins and your host name to Authorized redirect URIs
+  2. Add the host name and public IP-address to Authorized JavaScript origins and host name to Authorized redirect URIs.
      e.g. http://ec2-13-235-19-223.ap-south-1.compute.amazonaws.com/
 
 ### Duplicated Categories
 Categories are duplicated on home page. This is due to multiple runs of populate_db_data.py. Since category name is not a unique field the data was duplicated with new id. 
+
+![Home Page](info/img/home-page.png)
+
 
 ## References
 [Mod Wsgi Installation command](https://titanwolf.org/Network/Articles/Article?AID=ca581545-474a-4aa0-83dc-c57c6c344d32#gsc.tab=0)
