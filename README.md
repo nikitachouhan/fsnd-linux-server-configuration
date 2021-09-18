@@ -266,7 +266,7 @@ The issue still persists with my application.
 ### Duplicated Categories
 Categories are duplicated on home page. This is due to multiple runs of populate_db_data.py. Since category name is not a unique field the data was duplicated with new id. 
 
-![Home Page](info/img/home-page.png)
+![Home Page](info/home-page.PNG)
 
 
 ## References
